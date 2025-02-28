@@ -1,10 +1,9 @@
-
-
-resource "aws_iam_policy_attachment" "" {
-  name       = "cloudwatch-policy"
+resource "aws_iam_policy_attachment" "administratoraccess" {
+  name       = "administratoraccess"
   roles      = [aws_iam_role.iam_role_terraform.name]
-  policy_arn = "arn:aws:iam::aws:policy/CloudWatchFullAccess"
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
+
 
 resource "aws_iam_policy_attachment" "cloudwatch_policy" {
   name       = "cloudwatch-policy"
