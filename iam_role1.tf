@@ -1,5 +1,5 @@
-resource "aws_iam_role" "ec2_role_terraform" {
-  name = "iam-role-task"
+resource "aws_iam_role" "iam_role_terraform" {
+  name = "iam_role1"
 
 
   assume_role_policy = jsonencode({
