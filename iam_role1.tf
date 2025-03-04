@@ -1,5 +1,5 @@
 resource "aws_iam_role" "iam_role_terraform" {
-  name = "iam_role1_new1"
+  name = "iam_role1_new"
 
 
   assume_role_policy = jsonencode({
