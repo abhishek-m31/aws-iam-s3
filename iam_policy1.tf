@@ -1,9 +1,3 @@
-resource "aws_iam_policy_attachment" "administratoraccess" {
-  name       = "administratoraccess"
-  roles      = [aws_iam_role.iam_role_terraform.name]
-  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
-}
-
 
 resource "aws_iam_policy_attachment" "cloudwatch_policy" {
   name       = "cloudwatch-policy"
@@ -11,10 +5,10 @@ resource "aws_iam_policy_attachment" "cloudwatch_policy" {
   policy_arn = "arn:aws:iam::aws:policy/CloudWatchFullAccess"
 }
 
-resource "aws_iam_policy_attachment" "readwriteaccess" {
-  name       = "readwriteaccess"
+resource "aws_iam_policy_attachment" "listandread" {
+  name       = "listandread"
   roles      = [aws_iam_role.iam_role_terraform.name]
-  policy_arn = "arn:aws:iam::761018847268:policy/readwritepolicy"
+  policy_arn = "arn:aws:iam::761018847268:policy/MyIAMPermisions"
 }
 
 resource "aws_iam_policy_attachment" "sns_policy" {
@@ -22,3 +16,6 @@ resource "aws_iam_policy_attachment" "sns_policy" {
   roles      = [aws_iam_role.iam_role_terraform.name]
   policy_arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
 }
+
+
+
