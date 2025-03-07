@@ -1,34 +1,29 @@
 variable "role_name" {
   description = "The name of the IAM role"
   type        = string
+  default     = "iam_role1_new"
 }
 
-variable "assume_role_policy" {
-  description = "The assume role policy document"
+variable "environment" {
+  description = "The environment such as Dev,Prod"
   type        = string
+  default     = "Dev"
 }
 
-variable "cloudwatch_policy_name" {
-  description = "CloudWatch policy attachment"
-  default     = "cloudwatch-policy"
+variable "project" {
+  description = "The project name"
+  type        = string
+  default     = "Terraform"
 }
 
-variable "permissionsmfa_name" {
-  description = "PermissionsMFA policy attachment"
-  default     = "permissionmfa"
-}
-
-variable "listandread_name" {
-  description = "ListAndRead policy attachment"
-  default     = "listandread"
-}
-
-variable "timerestrictedaccess_name" {
-  description = "TimeRestrictedAccess policy attachment"
-  default     = "timerestrictedaccess"
-}
-
-variable "sns_policy_name" {
-  description = "SNS policy attachment"
-  default     = "sns-policy"
+variable "policies" {
+  description = "List of IAM policy ARNs to attach to the role"
+  type        = list(string)
+  default     = [
+    "arn:aws:iam::aws:policy/CloudWatchFullAccess",
+    "arn:aws:iam::761018847268:policy/PermissionsWithMFA",
+    "arn:aws:iam::761018847268:policy/MyIAMPermisions",
+    "arn:aws:iam::761018847268:policy/TimeRestrictedAccess",
+    "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
+  ]
 }
