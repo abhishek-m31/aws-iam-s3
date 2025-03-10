@@ -4,7 +4,7 @@ variable "role_name" {
 }
 
 variable "environment" {
-  description = "The environment (e.g., Dev, Prod)"
+  description = "The environment such as Dev,Prod"
   type        = string
 }
 
